@@ -3,6 +3,7 @@ stages:
   - deploy
 
 build:
+  stage: build
   script:
     - cd appVue
     - npm run dev
@@ -13,7 +14,8 @@ build:
   only:
     - master
 
-deploy-staging:
+deploy:
+  stage: deploy
   script:
     - python3 manage.py runserver 0.0.0.0:8000
   only:
