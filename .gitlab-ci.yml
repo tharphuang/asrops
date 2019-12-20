@@ -6,6 +6,7 @@ build:
   stage: build
   script:
     - cd appVue
+    — npm install
     - npm run dev
     - cd ..
   artifacts:
