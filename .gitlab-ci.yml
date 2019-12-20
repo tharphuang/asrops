@@ -1,0 +1,20 @@
+stages:
+  - build
+  - deploy
+
+build:
+  script:
+    - cd appVue
+    - npm run dev
+    - cd ..
+  artifacts:
+    paths:
+      - appVue/dist/
+  only:
+    - master
+
+deploy-staging:
+  script:
+    - python3 manage.py runserver 0.0.0.0:8000
+  only:
+    - master
