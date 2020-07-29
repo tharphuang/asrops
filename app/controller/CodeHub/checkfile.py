@@ -22,8 +22,5 @@ def getFileContent(filename):
     with open('/var/www/html/codehub/'+filename,'r') as reader:
         return reader.read()
 
-
-
-
 if __name__ == '__main__':
     print()

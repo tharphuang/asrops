@@ -8,18 +8,18 @@
         text-color="#fff"
         active-text-color="#ffd04b">
         <el-submenu index="1">
-          <template slot="title"><i class="el-icon-document-checked"></i><span>代码仓库</span></template>
-          <el-menu-item index="codehub">检查上传</el-menu-item>
-          <el-menu-item index="analysis">分析检测</el-menu-item>
-          <el-menu-item index="1-3">问题反馈</el-menu-item>
+          <template slot="title"><i class="el-icon-document-checked"></i><span>文件仓库</span></template>
+          <el-menu-item index="codehub">上传识别</el-menu-item>
+          <el-menu-item index="analysis">结果检测</el-menu-item>
+          <el-menu-item index="1-3">结果分析</el-menu-item>
         </el-submenu>
         <el-submenu index="2">
           <template slot="title"><i class="el-icon-coffee-cup"></i>质量分析</template>
           <el-menu-item index="2-1">选项2-1</el-menu-item>
         </el-submenu>
         <el-submenu index="3">
-          <template slot="title"><i class="el-icon-coin"></i>发布仓库</template>
-          <el-menu-item index="coderelease">版本树</el-menu-item>
+          <template slot="title"><i class="el-icon-coin"></i>发布模型</template>
+          <el-menu-item index="coderelease">模型版本</el-menu-item>
         </el-submenu>
         <el-submenu index="4">
           <template slot="title"><i class="el-icon-setting"></i>功能设置</template>

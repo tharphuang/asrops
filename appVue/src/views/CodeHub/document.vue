@@ -18,7 +18,7 @@
      </el-col>
   </el-row>
   <el-row :gutter="22" style="margin-top: 10px">
-    <el-row>
+    <!--<el-row>
       <el-select v-model="language" placeholder="language" style="margin-left: 40px">
         <el-option
           v-for="item in languages"
@@ -27,9 +27,13 @@
           :value="item.value">
         </el-option>
       </el-select>
+    </el-row>-->
+    <el-row>
+      <span style="margin-left: 40px">识别结果</span>
     </el-row>
+
     <el-col :span="11">
-      <codemirror v-model="code"
+      <codemirror v-model="codeLeft"
                   :options="cmOption"
                   @cursorActivity="onCmCursorActivity"
                   @ready="onCmReady"
@@ -38,7 +42,7 @@
       </codemirror>
     </el-col>
     <el-col :span="11">
-      <codemirror v-model="code"
+      <codemirror v-model="codeRight"
                   :options="cmOption"
                   @cursorActivity="onCmCursorActivity"
                   @ready="onCmReady"
@@ -100,7 +104,8 @@
       components:{codemirror},
     data() {
       return {
-          code: '',
+          codeLeft: '',
+          codeRight: '',
           fileList: [],
           stepNumber: 0,
           fileUploadName: '',
@@ -155,9 +160,11 @@
         this.fileUploadName = file.name
       },
       getFileContent(){
-          console.log(this.fileUploadName);
-          this.$http.get(this.$url+'/codehub/getFileContent/'+this.fileUploadName).then((res)=>{
-              this.code = res.data;
+          this.$http.get(this.$url+'/codehub/getFileContent/left.txt').then((res)=>{
+              this.codeLeft = res.data;
+          });
+          this.$http.get(this.$url+'/codehub/getFileContent/right.txt').then((res)=>{
+              this.codeRight = res.data;
           });
           this.stepNumber = 2;
       },
