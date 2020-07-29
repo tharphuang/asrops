@@ -1,4 +1,4 @@
-#asrops说明
+# asrops说明
 
 ## 整体架构
   1. 前后端分离，后端框架为django框架、前端框架为vue。  
@@ -9,7 +9,7 @@
 ## 运行方式  
   1. asrops目录下：  
   `python3 manage.py runserver 0:8080`
-  2. appVue目录下：
+  2. appVue目录下：  
   `npm run dev`
   
   
